@@ -1,8 +1,9 @@
 <h1>To Do List</h1>
 <ul>
-  @foreach(string task in Model)
+  @foreach(var task in Model)
   {
-    <li>@task</li>
+    <li><a href='/tasks/@task.GetId()'>@task.GetDescription()</a></li>
   }
 </ul>
 <p><a href="/">Add another task</a></p>
+<a href="/tasks_cleared"><button>Clear All Tasks</button></a>
